@@ -105,7 +105,7 @@ public class Agenda {
 			Console.writeError("No hay contactos en la agenda.\n");
 
 		} else {
-			nombre = Console.readName("Introduce el nombre:");
+			nombre = Console.readName();
 			encontrado = contactos.containsKey(nombre);
 			if (!encontrado) {
 				Console.writeError("No se ha encontrado ningún contacto con este nombre");
@@ -130,7 +130,7 @@ public class Agenda {
 			Console.writeError("No hay contactos en la agenda.\n");
 
 		} else {
-			nombre = Console.readName("Introduce un nombre:");
+			nombre = Console.readName();
 			encontrado = contactos.containsKey(nombre);
 			if (!encontrado) {
 				Console.writeError("No se ha encontrado ningún contacto con este nombre");
@@ -158,7 +158,7 @@ public class Agenda {
 			Console.writeError("No hay contactos en la agenda.\n");
 
 		} else {
-			nombre = Console.readName("Introduce el nombre:");
+			nombre = Console.readName();
 			encontrado = contactos.containsKey(nombre);
 			if (!encontrado) {
 				Console.writeError("No se ha encontrado ningún contacto con este nombre");
@@ -197,8 +197,10 @@ public class Agenda {
 	public static void createContact(Nacionalidad nacion, Map<String, Contacto> contactos) {
 
 		String name;
+		String apellidos;
 		//Se solicita introducir el contacto a introducir en agenda.
-		name = Console.readName("Introduce el nombre del contacto: ");
+		name = Console.readName();
+		apellidos=Console.readSurnames();
 		//Se crea una una factoria de tipo dirección(objeto de tipo DireccionFactory.
 		AbstractFactory<?> dir = FactoryProvider.getFactory("direccion");
 		//Se crea un objeto de tipo Dirección de una nacionalidad elegida por usuario.
@@ -208,7 +210,7 @@ public class Agenda {
 		//Se crea un objeto de tipo Telefono.
 		Telefono telefono = (Telefono) tel.create(nacion);
 		//Se crea un objeto de tipo contacto.
-		Contacto contacto = new Contacto(name, direccion, telefono);
+		Contacto contacto = new Contacto(name,apellidos, direccion, telefono);
 		//Se añade un par clave valor,clave sera nombre,obtenido con getNombre,y valor objeto de tipo contacto.
 		contactos.put(contacto.getNombre(), contacto);
 

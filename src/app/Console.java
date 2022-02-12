@@ -72,10 +72,10 @@ public class Console {
 	 * 
 	 * @return Retorna una cadena si el nombre introducido es correcto.
 	 */
-	public static String readName(String message) {
+	public static String readName() {
 
 		do {
-			write(message);
+			write("Introduce el nombre del contacto: ");
 			intro = enter.nextLine();
 			verify = intro.matches("[A-Z,Ñ]{1}[A-Z,a-z,ñ,\\s]{1,20}");
 			if (!verify) {
@@ -104,7 +104,7 @@ public class Console {
 		boolean verify = false;
 
 		do {
-			write("Introduce tus apellidos: ");
+			write("Introduce los apellidos del contacto: ");
 			intro = enter.nextLine();
 			verify = intro.matches("[A-Z,Ñ]{1}[a-z,ñ]{1,20}[\\s]{1}+[A-Z,Ñ]{1}[a-z,ñ]{1,20}");
 			if (!verify) {

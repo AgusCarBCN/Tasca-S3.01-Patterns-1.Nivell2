@@ -5,12 +5,14 @@ public class Contacto {
 private Direccion direccion;
 private Telefono telefono;
 private String nombre;
+private String surnames;
  
-public Contacto(String nombre,Direccion direccion,Telefono telefono) {
+public Contacto(String nombre,String surnames,Direccion direccion,Telefono telefono) {
 	
 	this.nombre=nombre;
 	this.direccion=direccion;
 	this.telefono=telefono;
+	this.surnames=surnames;
 }
 
 public String getDireccion() {
@@ -27,7 +29,8 @@ public void setTelefon(String telefono) {
 public String getNombre() {
 	return nombre;
 }
-
-
+public String getSurnames() {
+return surnames;
+}
 	
 }
